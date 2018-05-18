@@ -1,12 +1,12 @@
 import { Injectable } from "@angular/core";
-import { Http, Request, RequestMethod } from "@angular/http";
+import { Https, Request, RequestMethod } from "@angular/https";
 import { Observable } from "rxjs/Observable";
 import { Product } from "./product.model";
 import { Cart } from "./cart.model";
 import { Order } from "./order.model";
 import "rxjs/add/operator/map";
 
-const PROTOCOL = "http";
+const PROTOCOL = "https";
 const PORT = 3500;
 
 @Injectable()
@@ -14,7 +14,7 @@ export class RestDataSource {
     baseUrl: string;
     auth_token: string;
 
-    constructor(private http: Http) {
+    constructor(private https: Https) {
         this.baseUrl = `${PROTOCOL}://${location.hostname}:${PORT}/`;
     }
 
@@ -81,6 +81,6 @@ export class RestDataSource {
         if (auth && this.auth_token != null) {
             request.headers.set("Authorization", `Bearer<${this.auth_token}>`);
         }
-        return this.http.request(request).map(response => response.json());
+        return this.https.request(request).map(response => response.json());
     }
 }
