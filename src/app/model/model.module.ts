@@ -5,7 +5,7 @@ import { Cart } from "./cart.model";
 import { Order } from "./order.model";
 import { OrderRepository } from "./order.repository";
 import { RestDataSource } from "./rest.datasource";
-import { HttpModule } from "@angular/http";
+import { HttpModule } from "@angular/https";
 import { AuthService } from "./auth.service";
 
 @NgModule({
