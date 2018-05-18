@@ -4,22 +4,20 @@
 
 	
 	Comments:
-	final project
-	Date 4/29/2018
+	Exercise 3 Prototype
+	Date 1/30/2018
 	Name: Jacques Favre
 	Class CGS2829.0M1 Advance Web Site
 	Language HTML 5, CSS 3, jquerry
-
-	navbar from inspired from w3schools.com
-	https://www.w3schools.com/bootstrap4/bootstrap_utilities.asp
+	Incude:
+	Slicknav responsive menu, courtesy of MIT http://slicknav.io Copyright (c) 2016 Josh Cope
+	Terms and Privacy, courtesy of http://getterms.io/	
 	
 	
 	color: #dce2ea;  light blue box link menu**** darker
 	color: #eff2f5;  light blue background****lighter
 	color: #282828;  almost black 
 	color: #400000; red almost black for site header
-
-	color: #f8f9fa; grey nav bar
 	
 */
 /* reset selector */
@@ -34,7 +32,7 @@ body {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
     font-size: 100%;
      width: 99%; 
-	max-width: 900px;
+	max-width: 960px;
 	margin: 0 auto 0 auto; 
 	background-color: #eff2f5;  /* to make all light blue #dce2ea = darker  */
 	z-index: 9;/* to bring menu on top*/	
@@ -50,44 +48,104 @@ html {
 	}
 
 
+/*the style for the h2 within the header*/
+	header h2 {
+		font-size: 300%;
+ 		font-weight: 900;		/*to make bold */
+		font-family: Impact, "Arial Black", Verdana, Arial, Helvetica, sans-serif; 
+/*Arial Black font not showing on mobile, Added quotes, still not working*/ 
+		color: #400000; /*red almost black*/
+		padding: .6em 0 0 .4em;
+text-align: center;
+		/*float: left;*/
 
-
-
-#logo {
-	max-width: 80%;
-	margin-right: 0;
-}
-
-.navbar-brand {
-	max-width: 50%;
-	margin-right: 0;
-}
-
+	}
 	
-	
+	header h2 a {								/* header link style same color, no line*/
+		text-decoration: none;
+		text-align: center;
+		color: #800000;
+
+	}
 
 a:hover {
     color: #0056b3;
     text-decoration: none;
 }
 
+.navbar-default {
+    background-color: #F8F8F8;
+    border-color: #E7E7E7;
+}
+.navbar-default .navbar-nav > li > a {
+    color: #777777;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+    background-color: #E7E7E7;
+    color: #555555;
+}
 
-
-
-
-
-  img {  
-/* 	float: left; */
-	margin: 1em 1em 1em 1em;
-	border: 1px solid #282828;
-	border-radius: 2em;
-	max-width: 90%;
+	/* the styles for the navigation menu **********************************************/
+	
+	#menu {
+		padding: 2em 0 0 48%;   /* the position right left of navigation menu */
 	}
+
+	#menu ul {
+		list-style-type: none;
+		
+		margin: 0;
+		padding: 0;
+		position: relative;
+	}
+	
+	#menu ul li {
+		float: left;
+		width: 33%;/* (160/800)*100 = 20%*/
+	}
+	
+	#menu ul li a {
+		display: block;
+		text-align: center;
+		padding: 1.2em 0;
+		text-decoration: none;
+		background-color: #eff2f5;  /* to make sides almost black  */
+		color: black; /*90% light blue text link color*/
+		font-weight: bold;
+		z-index: 9999!important;/* to bring menu on top*/
+	}
+	
+	#menu ul ul { 
+	display: none;
+	position: absolute;
+	top: 100%;
+	}
+	
+	#menu ul ul li {
+		float: none;
+	}
+	
+	#menu ul li:hover  >  ul {
+	display: block;
+	width: 100%;
+	z-index: 9999!important;/* to bring menu on top THIS ONE WORKED*/
+	}
+
+	
+	#menu > ul::after {
+		content: "";
+		clear: both;
+		display: block;
+	}
+	
+	#menu ul li a:hover {
+	background-color: #dce2ea; /*90% little darker when hover*/
+	}
+/* 	End menu items ******************************************/
 
 /* the styles for the main section */
 main {
 	clear: left;
-	background-color: #f8f9fa;
 }
 	/*the style for the h1 within the main always 2.5% of screen size padding on both sides, regardless os screen size*/
 	main h1{
@@ -114,12 +172,12 @@ main {
 		padding:  .5em 2.5%;
 	}
 	/*store image sizing*/
-	 main img {  
+	 img {  
 /* 	float: left; */
-	margin: .9em 0 1em 0;
+	margin: 0 1em 1em 1em;
 	border: 1px solid #282828;
-	border-radius: .2em;
-	max-width: 100%;   
+	border-radius: 2px;
+	max-width: 90%;
 	}
 
 	/* style title on auth and admin pages */
@@ -160,7 +218,7 @@ clear: left;
 		width: 20%;          /* (215/800)*100 = 26.875% - 5%  for margin*/
 		float: left;
 		padding-left: 1.5%; /* may be dont need!!!!(20/800)*100 = 2.5%* only left OR 1, 5 to align with mobile menu icon*/
-		padding-top: 4em;
+		padding-top: 3em;
 		} 
 
 
@@ -169,8 +227,6 @@ clear: left;
 	/* list on contacyt page */
 	main ul {
 	padding: 0 0 .25em 3.5em;
-
-
 	}
 	
 	/*main li { 
@@ -197,27 +253,6 @@ clear: left;
 /* the styles for the iframe, position and size of form*/	
 	
 	.Wrapper iframe {
-		position: absolute;
-		top: 0;
-		left: 0;
- 		width: 100%;     /*Video 100% of main who is 90% of page */
-		height: 100%;
-	}
-
-	/* the styles for the bearing presentatio  to make it responsive Wrapper and Wrapper iframe*/		
-/* same as a youtube video, here the full width */
-/* the wrapper, how the box will suround the form*/	
-	.Wrapperpp {
-		position: relative;
-		padding-bottom: 56%; 
-		padding-top: 25px;
-		margin-bottom: 1%;
-		height: 0;
-	}
-	
-/* the styles for the iframe, position and size of form*/	
-	
-	.Wrapperpp iframe {
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -308,9 +343,13 @@ footer {
 /*********************************************************************************************/
 /* Media Query for tablet view**********RESPONSIVE**********************************/
 /* no Mobile menu, desktop view, switces below*/
-/* Media Query for tablet view**********RESPONSIVE**********************************/
-/* no Mobile menu, desktop view, switces below*/
-
+.slicknav_menu {
+	display: none;
+}
+/*to adjust menu no project list*/
+		#projects { 
+	display: none;
+	}
 
 /* tablet portrait to standard 960  no change here*/
 @media only screen and (max-width: 959px) {
@@ -319,27 +358,25 @@ footer {
 	.Wrapper {
 		padding-bottom: 160%; 
 			}	
-
-/*.navbar-toggler-icon { float: right; }*/
-
 }  
 
 
 /* mobile landscape to tablet portrait SWITCH MENU**************************************/
 @media only screen and (max-width: 769px) {
+	/* #menu is the original menu */
+	/*Turn OFF menu*/
+	.js #menu {
+		display:none;
+	}
+	/*Turn ON mobile menu*/
+	.js .slicknav_menu {
+		display:block;
+/* 		mobile menu icon float to right or left of header, works here */
+				float: left;	
+
+	}
 
 
-
-#logo {
-	max-width: 75%;
-}
-
-.navbar-brand {
-	max-width: 75%;
-	margin-right: 0;
-}
-
-/*.navbar-toggler { float: right; }*/
 
 			section {
 	width: 75%; /* (525/800)*100 = 65.625% minus 5% for margins*/ 
@@ -357,7 +394,7 @@ footer {
 		width: 25%;          /* (215/800)*100 = 26.875% - 5%  for margin*/
 		float: left;
 		padding-left: 1.5%; /* may be dont need!!!!(20/800)*100 = 2.5%* only left OR 1, 5 to align with mobile menu icon*/
-		padding-top: 4em;
+		padding-top: 1em;
 		} 
 	
 	/*reduce size header 300% to 250% */
@@ -388,7 +425,7 @@ footer {
 	body { font-size: 90%; }
 	/* Make link "email me" bigger on phone size screen to make easier to click*/
 	main  p a { 
-	font-size: 120%; 
+	font-size: 160%; 
 	} 	
 /* 	adjust title to fit in one line */
 		main h1{
@@ -396,16 +433,6 @@ footer {
 	}
 header h2  {
 	font-size: 160%;
-}
-main h1 {
-	font-size: 140%;
-}
-/*#logo {
-	max-width: 40%;
-}*/
-.navbar-brand {
-	max-width: 75%;
-	margin-right: 0;
 }
 
 	/* Google form wrapper incraased hight to prevent double scolling of form inside page*/
@@ -421,12 +448,6 @@ main h1 {
 
 	section {
 		width: 100%;
-	}
-
-
-
-	footer p {
-		font-size: 80%;
 	}
 
 } 	

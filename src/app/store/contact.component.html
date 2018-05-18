@@ -1,0 +1,79 @@
+<nav class="navbar navbar-expand-md bg-light navbar-light">
+  <a class="navbar-brand" href="/">
+  <img id="logo" src="assets/images/ppslogo.png" alt="logo" >  
+  </a>
+
+
+  
+  <button class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+        </li>
+        <li class="nav-item">
+            <button class="btn btn-link text-dark" routerLink="/home"> Home </button>
+        </li>
+        <li class="nav-item">
+            <button class="btn btn-link text-dark" routerLink="/store"> Store </button>
+        </li>
+         <li class="nav-item">
+         <div class="btn-group">
+            <button class="btn btn-link text-dark dropdown-toggle" data-toggle="dropdown">
+                Projects
+            </button>
+                <div class="dropdown-menu">
+                    <button class="btn btn-link text-dark" routerLink="/clock"> Clock </button>
+                    <button class="btn btn-link text-dark" routerLink="/bearing"> Bearing </button>
+                </div>
+        </div>
+        </li>
+        <li class="nav-item">
+            <button class="btn btn-link text-dark" routerLink="/contact"> Contact </button>
+        </li>
+            
+    </ul>
+  </div>  
+</nav>
+
+
+    <main>
+
+              <h1>Contact Page</h1>
+    
+
+        
+<!--          <p>The IT world is a world of option.
+          Because there are many ways to do things and many tools to use, here are a few options.
+          Some might want to copy and paste an email on a laptop and use their online email account.
+          On a mobile device, it is easy to click on a link to open the device mail app and go from there.
+          Other people may want to make a phone call or send a text, so the option is here as well.</p>    -->
+  
+
+        <h3 id="contact">Here are are ways to get in touch</h3>
+      <ul>
+        <li><div id="nopadding"><a href="mailto:jacqueshfavre@gmail.com?&subject=Jacques%20Favre%20Portfolio"><strong>Email me</strong></a> with questions or comments</div></li>
+        <li><strong>Call:</strong> 352-208-3526</li>
+        <li><strong>Use this email:</strong> jacqueshfavre@gmail.com</li>
+        <li><strong>Or use this contact form:</strong></li> 
+    </ul>
+    
+    <h1>Contact Form</h1>
+<!-- google docs form took some adjusting to get it error free in validator. Done as a youtube video -->
+
+<div class="Wrapper">
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeCCcPXzWno5lJCrdCTw_7tO_EztVTFjAapI4A-Kg74oPl1tQ/viewform?embedded=true" width="700" height="1250" ></iframe>
+</div>
+
+
+    </main>
+
+    <footer>
+<p><button class="btn btn-link btn-sm" routerLink="/terms">Terms and Privacy</button>
+
+        &nbsp;&nbsp;&copy; 2018 Jacques Favre ajfavre.com
+
+<button class="btn btn-link btn-sm text-danger" routerLink="/admin">Admin</button></p> 
+    </footer>

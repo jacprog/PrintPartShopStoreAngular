@@ -18,8 +18,6 @@
 	color: #eff2f5;  light blue background****lighter
 	color: #282828;  almost black 
 	color: #400000; red almost black for site header
-
-	color: #f8f9fa; grey nav bar
 	
 */
 /* reset selector */
@@ -87,7 +85,6 @@ a:hover {
 /* the styles for the main section */
 main {
 	clear: left;
-	background-color: #f8f9fa;
 }
 	/*the style for the h1 within the main always 2.5% of screen size padding on both sides, regardless os screen size*/
 	main h1{
@@ -169,8 +166,6 @@ clear: left;
 	/* list on contacyt page */
 	main ul {
 	padding: 0 0 .25em 3.5em;
-
-
 	}
 	
 	/*main li { 

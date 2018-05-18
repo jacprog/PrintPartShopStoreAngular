@@ -1,0 +1,37 @@
+
+
+
+
+
+<div class="pull-xs-right">
+    <!-- <small>
+        Your cart:
+        <span *ngIf="cart.itemCount > 0">
+            {{ cart.itemCount }} item(s)
+            {{ cart.cartPrice | currency:"USD":true:"2.2-2" }}
+        </span>
+        <span *ngIf="cart.itemCount == 0">
+            (empty)
+        </span> 
+    </small>-->
+    <!-- <button class="btn btn-sm bg-inverse" [disabled]="cart.itemCount == 0" -->
+        <!--  div is for my custom CSS ONLY!!!! -->
+        <div id="cartbtn">
+        <button class="btn btn-block bg-inverse" [disabled]="cart.itemCount == 0"
+            routerLink="/cart"> 
+        <i class="fa fa-shopping-cart"></i>
+
+        Your cart:
+        <span *ngIf="cart.itemCount > 0">
+            {{ cart.itemCount }} item(s)
+            {{ cart.cartPrice | currency:"USD":true:"2.2-2" }}
+        </span>
+        <span *ngIf="cart.itemCount == 0">
+            (empty)
+        </span>
+    
+    </button>
+</div>
+
+</div>
+

@@ -1,0 +1,109 @@
+<nav class="navbar navbar-expand-md bg-light navbar-light">
+  <a class="navbar-brand" href="/">
+  <img id="logo" src="assets/images/ppslogo.png" alt="logo" >  
+  </a>
+
+
+  
+  <button class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+        </li>
+        <li class="nav-item">
+            <button class="btn btn-link text-dark" routerLink="/home"> Home </button>
+        </li>
+        <li class="nav-item">
+            <button class="btn btn-link text-dark" routerLink="/store"> Store </button>
+        </li>
+         <li class="nav-item">
+         <div class="btn-group">
+            <button class="btn btn-link text-dark dropdown-toggle" data-toggle="dropdown">
+                Projects
+            </button>
+                <div class="dropdown-menu">
+                    <button class="btn btn-link text-dark" routerLink="/clock"> Clock </button>
+                    <button class="btn btn-link text-dark" routerLink="/bearing"> Bearing </button>
+                </div>
+        </div>
+        </li>
+        <li class="nav-item">
+            <button class="btn btn-link text-dark" routerLink="/contact"> Contact </button>
+        </li>
+            
+    </ul>
+  </div>  
+</nav>
+ 
+<div *ngIf="orderSent" class="m-a-1 text-xs-center">
+    <h2>Thanks!</h2> 
+    <p>Thanks for placing your order.</p> 
+    <p>We'll ship your goods as soon as possible.</p> 
+    <button class="btn btn-primary" routerLink="/store">Return to Store</button>
+</div>
+<form *ngIf="!orderSent" #form="ngForm" novalidate 
+      (ngSubmit)="submitOrder(form)" class="m-a-1">
+    <div class="form-group">
+        <label>Name</label>
+        <input class="form-control" #name="ngModel" name="name" 
+               [(ngModel)]="order.name" required />
+        <span  *ngIf="submitted && name.invalid" class="text-danger">
+            Please enter your name
+        </span>
+    </div>
+    <div class="form-group">
+        <label>Address</label>
+        <input class="form-control" #address="ngModel" name="address" 
+               [(ngModel)]="order.address" required />
+        <span  *ngIf="submitted && address.invalid" class="text-danger">
+            Please enter your address
+        </span>
+    </div>
+    <div class="form-group">
+        <label>City</label>
+        <input class="form-control" #city="ngModel" name="city" 
+               [(ngModel)]="order.city" required />
+        <span  *ngIf="submitted && city.invalid" class="text-danger">
+            Please enter your city
+        </span>
+    </div>
+    <div class="form-group">
+        <label>State</label>
+        <input class="form-control" #state="ngModel" name="state" 
+               [(ngModel)]="order.state" required />
+        <span  *ngIf="submitted && state.invalid" class="text-danger">
+            Please enter your state
+        </span>
+    </div>
+    <div class="form-group">
+        <label>Zip/Postal Code</label>
+        <input class="form-control" #zip="ngModel" name="zip" 
+               [(ngModel)]="order.zip" required />
+        <span  *ngIf="submitted && zip.invalid" class="text-danger">
+            Please enter your zip/postal code
+        </span>
+    </div>
+    <div class="form-group">
+        <label>Country</label>
+        <input class="form-control" #country="ngModel" name="country" 
+               [(ngModel)]="order.country" required />
+        <span  *ngIf="submitted && country.invalid" class="text-danger">
+            Please enter your country
+        </span>
+    </div>
+    <div class="text-xs-center">
+        <button class="btn btn-secondary" routerLink="/cart">Back</button>
+        <button class="btn btn-primary" type="submit">Complete Order</button>
+    </div>
+</form>
+
+    <footer>
+<p><button class="btn btn-link btn-sm" routerLink="/terms">Terms and Privacy</button>
+
+        &nbsp;&nbsp;&copy; 2018 Jacques Favre ajfavre.com
+
+<button class="btn btn-link btn-sm text-danger" routerLink="/admin">Admin</button></p> 
+    </footer>
