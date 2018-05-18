@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { Https, Request, RequestMethod } from "@angular/https";
+import { Http, Request, RequestMethod } from "@angular/http";
 import { Observable } from "rxjs/Observable";
 import { Product } from "./product.model";
 import { Cart } from "./cart.model";
@@ -14,7 +14,7 @@ export class RestDataSource {
     baseUrl: string;
     auth_token: string;
 
-    constructor(private https: Https) {
+    constructor(private http: Http) {
         this.baseUrl = `${PROTOCOL}://${location.hostname}:${PORT}/`;
     }
 
@@ -81,6 +81,6 @@ export class RestDataSource {
         if (auth && this.auth_token != null) {
             request.headers.set("Authorization", `Bearer<${this.auth_token}>`);
         }
-        return this.https.request(request).map(response => response.json());
+        return this.http.request(request).map(response => response.json());
     }
 }
